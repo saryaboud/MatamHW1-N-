@@ -50,7 +50,10 @@ ostream &operator<<(ostream& os, const Task& task) {
 }
 
 bool operator>(const Task& lhs, const Task& rhs) {
-    return lhs.m_priority > rhs.m_priority;
+    if (lhs.m_priority == rhs.m_priority) {
+            return lhs.m_id < rhs.m_id; 
+        }
+        return lhs.m_priority > rhs.m_priority;
 }
 
 
