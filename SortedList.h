@@ -86,6 +86,10 @@ namespace mtm {
         }
 
         void insert(T value) {
+            if (head == nullptr) {
+                head = new node(value);
+                head->next = nullptr;
+            }
             node *newnode = new node(value);
             if (value > head->value) {
                 newnode->next = head;
@@ -102,6 +106,7 @@ namespace mtm {
                 tmp = tmp->next;
                 pre = pre->next;
             }
+            length++;
         }
 
         void remove(const ConstIterator &s) {
@@ -120,6 +125,26 @@ namespace mtm {
                 delete current;
             }
             length--;
+        }
+
+        SortedList &filter(bool (*func)(T)) {
+            SortedList newlist = new SortedList();
+            node *tmp = this->head;
+            while (tmp != nullptr) {
+                if (func(tmp->value)) newlist.insert(tmp->value);
+                tmp = tmp->next;
+            }
+            return *newlist;
+        }
+
+        SortedList &apply(bool (*func)(T)) {
+            SortedList newlist = new SortedList();
+            node *tmp = this->head;
+            while (tmp != nullptr) {
+                newlist.insert(func(tmp->value));
+                tmp = tmp->next;
+            }
+            return *newlist;
         }
 
 
