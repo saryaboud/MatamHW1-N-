@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <stdexcept>
+//#include <stdexcept>
 
 namespace mtm {
     template<typename T>
@@ -127,7 +127,17 @@ namespace mtm {
             length--;
         }
 
-        SortedList &filter(bool (*func)(T)) {
+        int length_() {
+            node *tmp = this->head;
+            int length = 0;
+            while (tmp != nullptr) {
+                length++;
+                tmp = tmp->next;
+            }
+            return length;
+        }
+
+        SortedList &filter(std::function<bool(T)> func) {
             SortedList newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {
@@ -137,7 +147,21 @@ namespace mtm {
             return *newlist;
         }
 
-        SortedList &apply(bool (*func)(T)) {
+        /*SortedList &filter(std::function<bool(T)> func) {
+            SortedList newlist = new SortedList();
+            int i=0;
+            Node *tmp=head;
+            while (i<length) {
+                if(func(tmp->data)) {
+                    newlist.insert(tmp->data);
+                }
+                tmp=tmp->next;
+                i++;
+            }
+            return *newlist;
+        }*/
+
+        SortedList &apply(std::function<T(T)> func) {
             SortedList newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {

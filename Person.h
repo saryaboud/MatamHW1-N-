@@ -13,6 +13,7 @@ using std::string;
 /**
  * @brief Class representing a person who can have tasks assigned.
  */
+
 class Person {
 private:
     string m_name;

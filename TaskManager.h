@@ -1,7 +1,7 @@
-
 #pragma once
 
 #include "Task.h"
+#include "Person.h"
 
 /**
  * @brief Class managing tasks assigned to multiple persons.
@@ -11,7 +11,10 @@ private:
     /**
      * @brief Maximum number of persons the TaskManager can handle.
      */
+
     static const int MAX_PERSONS = 10;
+    Person arr[MAX_PERSONS];
+
 
     // Note - Additional private fields and methods can be added if needed.
 
@@ -46,6 +49,7 @@ public:
      *
      * @param personName The name of the person who will complete the task.
      */
+
     void completeTask(const string &personName);
 
     /**
@@ -72,4 +76,6 @@ public:
      * @brief Prints all tasks assigned to all employees.
      */
     void printAllTasks() const;
+
+    int length() const;
 };
