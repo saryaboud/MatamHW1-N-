@@ -15,7 +15,7 @@ namespace mtm {
         };
 
         node *head;
-        int length;
+        int len;
 
     public:
         class ConstIterator;
@@ -26,11 +26,11 @@ namespace mtm {
         }
 
         ConstIterator end() const {
-            return ConstIterator(this, length);
+            return ConstIterator(this, len);
         }
 
 
-        SortedList() : head(nullptr), length(0) {
+        SortedList() : head(nullptr), len(0) {
         }
 
         ~SortedList() {
@@ -45,10 +45,10 @@ namespace mtm {
         SortedList(const SortedList &other) {
             if (other.head == nullptr) {
                 head = nullptr;
-                length = 0;
+                len = 0;
                 return;
             }
-            length = other.length;
+            len = other.len;
             head = new node(other.head->value);
             node *current = other.head->next;
             node *tmp = head;
@@ -67,13 +67,13 @@ namespace mtm {
                 delete tmp;
             }
             head = nullptr;
-            length = 0;
+            len = 0;
             if (other.head == nullptr) {
                 head = nullptr;
-                length = 0;
+                len = 0;
                 return *this;
             }
-            length = other.length;
+            len = other.len;
             head = new node(other.head->value);
             node *current = other.head->next;
             node *tmp = head;
@@ -106,7 +106,7 @@ namespace mtm {
                 tmp = tmp->next;
                 pre = pre->next;
             }
-            length++;
+            len++;
         }
 
         void remove(const ConstIterator &s) {
@@ -124,10 +124,10 @@ namespace mtm {
                 tmp->next = tmp->next->next;
                 delete current;
             }
-            length--;
+            len--;
         }
 
-        int length_() {
+        int length() const {
             node *tmp = this->head;
             int length = 0;
             while (tmp != nullptr) {
@@ -138,10 +138,10 @@ namespace mtm {
         }
 
         SortedList &filter(std::function<bool(T)> func) {
-            SortedList newlist = new SortedList();
+            auto *newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {
-                if (func(tmp->value)) newlist.insert(tmp->value);
+                if (func(tmp->value)) newlist->insert(tmp->value);
                 tmp = tmp->next;
             }
             return *newlist;
@@ -162,10 +162,10 @@ namespace mtm {
         }*/
 
         SortedList &apply(std::function<T(T)> func) {
-            SortedList newlist = new SortedList();
+            auto *newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {
-                newlist.insert(func(tmp->value));
+                newlist->insert(func(tmp->value));
                 tmp = tmp->next;
             }
             return *newlist;
@@ -232,7 +232,7 @@ namespace mtm {
 
         const T &operator++() {
             index++;
-            return *this;
+            return *(*this);
         }
 
         bool operator!=(const ConstIterator &other) const {
