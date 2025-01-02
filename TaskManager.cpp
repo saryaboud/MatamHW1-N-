@@ -1,5 +1,6 @@
 #include <iostream>
 #include "TaskManager.h"
+#include <functional>
 
 TaskManager::TaskManager() = default;
 

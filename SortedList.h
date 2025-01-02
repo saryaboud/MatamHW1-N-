@@ -1,7 +1,8 @@
 #pragma once
 
 #include <iostream>
-//#include <stdexcept>
+#include <stdexcept>
+#include <functional>
 
 namespace mtm {
     template<typename T>
