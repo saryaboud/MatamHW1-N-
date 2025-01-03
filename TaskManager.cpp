@@ -21,8 +21,7 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
         }
     }
     if (length >= MAX_PERSONS) throw std::runtime_error("no space");
-    Person p(personName);
-    arr[length] = p;
+    arr[length] = Person(personName);
     arr[length].assignTask(task);
 }
 

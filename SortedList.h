@@ -236,7 +236,7 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
-            if (index >= s->len) {
+            if (index > s->len) {
                 throw std::out_of_range("Iterator out of range");
             }
             int i = 0;
