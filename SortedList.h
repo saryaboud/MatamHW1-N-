@@ -93,11 +93,15 @@ namespace mtm {
             if (head == nullptr) {
                 head = new node(value);
                 head->next = nullptr;
+                len++;
+                return;
             }
             node *newnode = new node(value);
             if (value > head->value) {
                 newnode->next = head;
                 head = newnode;
+                len++;
+                return;
             }
             node *tmp = head->next;
             node *pre = head;
