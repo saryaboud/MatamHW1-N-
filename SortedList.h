@@ -113,14 +113,14 @@ namespace mtm {
         }
 
         void remove(const ConstIterator &s) {
-            if (s.index == 0) {
+            if (s.getindex() == 0) {
                 node *tmp = head;
                 this->head = this->head->next;
                 delete tmp;
             } else {
                 int i = 0;
                 node *tmp = this->head;
-                while (i < s.index - 1) {
+                while (i < s.getindex() - 1) {
                     tmp = tmp->next;
                     i++;
                 }
@@ -211,6 +211,10 @@ namespace mtm {
         }
 
     public:
+        int getindex() const {
+            return index;
+        }
+
         ConstIterator(const ConstIterator &other)
             : s(other.s), index(other.index) {
         }
@@ -245,6 +249,8 @@ namespace mtm {
             if (other.s != s) return false;
             return true;
         }
+
+
 
 
         /**
