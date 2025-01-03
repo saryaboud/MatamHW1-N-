@@ -7,7 +7,7 @@ TaskManager::TaskManager() = default;
 int TaskManager::length_() const {
     int length = 0;
     for (int i = 0; i < MAX_PERSONS; i++) {
-        if (arr[i].getName() == "")length += 1;
+        if (arr[i].getName() != "")length += 1;
     }
     return length;
 }
