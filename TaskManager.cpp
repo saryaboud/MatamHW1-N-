@@ -25,7 +25,6 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
             arr[i].assignTask(newtask);
             taskid++;
             return;
-
         }
     }
     if (length >= MAX_PERSONS) throw std::runtime_error("no space");
@@ -59,8 +58,8 @@ void TaskManager::bumpPriorityByType(TaskType type, int priority) {
             }
             return task;
         };
-        list = list.apply(func);
-        arr[i].setTasks(list);
+        SortedList<Task> l = list.apply(func);
+        arr[i].setTasks(l);
     }
 }
 
