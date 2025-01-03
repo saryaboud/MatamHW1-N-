@@ -77,5 +77,5 @@ public:
      */
     void printAllTasks() const;
 
-    int length() const;
+    int length_() const;
 };

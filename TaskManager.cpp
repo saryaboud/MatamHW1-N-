@@ -4,7 +4,7 @@
 
 TaskManager::TaskManager() = default;
 
-int TaskManager::length() const {
+int TaskManager::length_() const {
     int length = 0;
     for (int i = 0; i < MAX_PERSONS; i++) {
         if (arr[i].getName() == "")length += 1;
@@ -13,21 +13,21 @@ int TaskManager::length() const {
 }
 
 void TaskManager::assignTask(const std::string &personName, const Task &task) {
-    int length = this->length();
+    int length = this->length_();
     for (int i = 0; i < length; i++) {
         if (this->arr[i].getName() == personName) {
             arr[i].assignTask(task);
             return;
         }
     }
-    if (length == MAX_PERSONS) throw std::runtime_error("");
+    if (length >= MAX_PERSONS) throw std::runtime_error("");
     Person p(personName);
     arr[length] = p;
     arr[length].assignTask(task);
 }
 
 void TaskManager::completeTask(const string &personName) {
-    int length = this->length();
+    int length = this->length_();
     for (int i = 0; i < length; i++) {
         if (this->arr[i].getName() == personName) {
             arr[i].completeTask();
@@ -36,7 +36,7 @@ void TaskManager::completeTask(const string &personName) {
 }
 
 void TaskManager::bumpPriorityByType(TaskType type, int priority) {
-    int length = this->length();
+    int length = this->length_();
     for (int i = 0; i < length; i++) {
         SortedList<Task> list = arr[i].getTasks();
         auto func = [type,priority](Task task) -> Task {
@@ -54,7 +54,7 @@ void TaskManager::bumpPriorityByType(TaskType type, int priority) {
 }
 
 void TaskManager::printAllEmployees() const {
-    int length = this->length();
+    int length = this->length_();
     for (int i = 0; i < length; i++) {
         std::cout << arr[i] << std::endl;
     }
@@ -62,7 +62,7 @@ void TaskManager::printAllEmployees() const {
 
 void TaskManager::printAllTasks() const {
     SortedList<Task> newlist;
-    int length = this->length();
+    int length = this->length_();
     for (int i = 0; i < length; i++) {
         SortedList<Task> list = arr[i].getTasks();
         for (auto it = list.begin(); it != list.end(); ++it) {
@@ -75,7 +75,7 @@ void TaskManager::printAllTasks() const {
 }
 
 void TaskManager::printTasksByType(TaskType type) const {
-    int length = this->length();
+    int length = this->length_();
     auto *newtask = new TaskManager;
     for (int i = 0; i < length; i++) {
         SortedList<Task> list = arr[i].getTasks();

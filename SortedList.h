@@ -1,8 +1,9 @@
 #pragma once
 
+#include <functional>
 #include <iostream>
 #include <stdexcept>
-#include <functional>
+
 
 namespace mtm {
     template<typename T>
@@ -11,8 +12,8 @@ namespace mtm {
             T value;
             node *next;
 
-            explicit node(const T &data) : value(data), next(nullptr) {}
-
+            explicit node(const T &data) : value(data), next(nullptr) {
+            }
         };
 
         node *head;
@@ -113,14 +114,14 @@ namespace mtm {
         }
 
         void remove(const ConstIterator &s) {
-            if (s.getindex() == 0) {
+            if (s.index == 0) {
                 node *tmp = head;
                 this->head = this->head->next;
                 delete tmp;
             } else {
                 int i = 0;
                 node *tmp = this->head;
-                while (i < s.getindex() - 1) {
+                while (i < s.index - 1) {
                     tmp = tmp->next;
                     i++;
                 }
@@ -211,6 +212,7 @@ namespace mtm {
         }
 
     public:
+
         int getindex() const {
             return index;
         }
@@ -230,6 +232,9 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
+            if (index >= s->len) {
+                throw std::out_of_range("Iterator out of range");
+            }
             int i = 0;
             node *tmp = s->head;
             while (i < index) {
@@ -249,8 +254,6 @@ namespace mtm {
             if (other.s != s) return false;
             return true;
         }
-
-
 
 
         /**
