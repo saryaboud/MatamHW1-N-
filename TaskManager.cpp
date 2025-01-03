@@ -14,15 +14,27 @@ int TaskManager::length_() const {
 
 void TaskManager::assignTask(const std::string &personName, const Task &task) {
     int length = this->length_();
+    int taskid = 0;
+    for (int i = 0; i < length; i++) {
+        taskid += arr[i].getTasks().length();
+    }
     for (int i = 0; i < length; i++) {
         if (this->arr[i].getName() == personName) {
-            arr[i].assignTask(task);
+            Task newtask(task);
+            newtask.setId(taskid);
+            arr[i].assignTask(newtask);
+            taskid++;
             return;
+
         }
     }
     if (length >= MAX_PERSONS) throw std::runtime_error("no space");
     arr[length] = Person(personName);
-    arr[length].assignTask(task);
+    Task newtask(task);
+    newtask.setId(taskid);
+    arr[length].assignTask(newtask);
+    taskid++;
+    length++;
 }
 
 void TaskManager::completeTask(const string &personName) {

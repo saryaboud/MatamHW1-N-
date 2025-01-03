@@ -11,7 +11,6 @@ namespace mtm {
         struct node {
             T value;
             node *next;
-
             explicit node(const T &data) : value(data), next(nullptr) {
             }
         };
