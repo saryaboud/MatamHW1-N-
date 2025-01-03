@@ -11,8 +11,8 @@ namespace mtm {
             T value;
             node *next;
 
-            explicit node(const T &data) : value(data), next(nullptr) {
-            }
+            explicit node(const T &data) : value(data), next(nullptr) {}
+
         };
 
         node *head;
@@ -58,6 +58,7 @@ namespace mtm {
                 tmp = tmp->next;
                 current = current->next;
             }
+            tmp->next = nullptr;
         }
 
         SortedList &operator=(const SortedList &other) {
@@ -83,6 +84,7 @@ namespace mtm {
                 tmp = tmp->next;
                 current = current->next;
             }
+            tmp->next = nullptr;
             return *this;
         }
 
@@ -102,7 +104,7 @@ namespace mtm {
                 if (value > tmp->value) {
                     newnode->next = tmp;
                     pre->next = newnode;
-                    return;
+                    break;
                 }
                 tmp = tmp->next;
                 pre = pre->next;
@@ -120,6 +122,7 @@ namespace mtm {
                 node *tmp = this->head;
                 while (i < s.index - 1) {
                     tmp = tmp->next;
+                    i++;
                 }
                 node *current = tmp->next;
                 tmp->next = tmp->next->next;
@@ -227,6 +230,7 @@ namespace mtm {
             node *tmp = s->head;
             while (i < index) {
                 tmp = tmp->next;
+                i++;
             }
             return tmp->value;
         }
