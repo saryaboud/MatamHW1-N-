@@ -250,14 +250,14 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
-            if (index > s->len) {
-                throw std::out_of_range("Iterator out of range");
+            if (index >= s->len) {
+              //  throw std::out_of_range("out of range");
             }
             int i = 0;
             node *tmp = s->head;
             while (i < index) {
                 if (tmp == nullptr) {
-                    throw std::out_of_range("Iterator out of range");
+                //throw std::out_of_range("out of range");
                 }
                 tmp = tmp->next;
                 i++;
@@ -268,6 +268,9 @@ namespace mtm {
         const ConstIterator &operator++() {
             if (index < s->len) {
                 index++;
+            }
+            if(index >= s->len) {
+                throw std::out_of_range("Iterator out of range");
             }
             return *this;
         }
