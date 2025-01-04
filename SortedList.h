@@ -146,8 +146,8 @@ namespace mtm {
                 delete current;
                 len--;
             } else {
-                throw std::out_of_range("out of range");
-                return;
+              /*  throw std::out_of_range("out of range");
+                return;*/
             }
         }
 
