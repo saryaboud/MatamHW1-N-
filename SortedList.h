@@ -114,6 +114,8 @@ namespace mtm {
                 tmp = tmp->next;
                 pre = pre->next;
             }
+            pre->next = newnode;
+            newnode->next = nullptr;
             len++;
         }
 
