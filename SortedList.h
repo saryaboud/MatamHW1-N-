@@ -11,6 +11,7 @@ namespace mtm {
         struct node {
             T value;
             node *next;
+
             explicit node(const T &data) : value(data), next(nullptr) {
             }
         };
@@ -145,11 +146,11 @@ namespace mtm {
             return length;
         }
 
-        SortedList *filter(std::function<bool(T)> func) {
-            auto *newlist = new SortedList();
+        SortedList filter(std::function<bool(T)> func) {
+            SortedList newlist;
             node *tmp = this->head;
             while (tmp != nullptr) {
-                if (func(tmp->value)) newlist->insert(tmp->value);
+                if (func(tmp->value)) newlist.insert(tmp->value);
                 tmp = tmp->next;
             }
             return newlist;
@@ -169,11 +170,11 @@ namespace mtm {
             return *newlist;
         }*/
 
-        SortedList *apply(std::function<T(T)> func) {
-            auto *newlist = new SortedList();
+        SortedList apply(std::function<T(T)> func) {
+            SortedList newlist;
             node *tmp = this->head;
             while (tmp != nullptr) {
-                newlist->insert(func(tmp->value));
+                newlist.insert(func(tmp->value));
                 tmp = tmp->next;
             }
             return newlist;
@@ -215,7 +216,6 @@ namespace mtm {
         }
 
     public:
-
         int getindex() const {
             return index;
         }
