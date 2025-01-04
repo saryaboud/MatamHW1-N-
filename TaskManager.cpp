@@ -4,6 +4,8 @@
 
 TaskManager::TaskManager() = default;
 
+TaskManager::~TaskManager() = default;
+
 int TaskManager::length_() const {
     int length = 0;
     for (int i = 0; i < MAX_PERSONS; i++) {

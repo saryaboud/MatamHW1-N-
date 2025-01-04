@@ -26,6 +26,8 @@ public:
      */
     TaskManager();
 
+    ~TaskManager();
+
     /**
      * @brief Deleted copy constructor to prevent copying of TaskManager objects.
      */
