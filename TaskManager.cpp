@@ -61,7 +61,7 @@ void TaskManager::bumpPriorityByType(TaskType type, int priority) {
          };
         SortedList<Task> l = list.apply(func);
         arr[i].setTasks(l);
-       // delete &l; // caution
+        delete &l; // caution
     }
 }
 
@@ -99,7 +99,7 @@ void TaskManager::printTasksByType(TaskType type) const {
         };
         SortedList<Task> l = list.filter(func);
         newtask->arr[i].setTasks(l);
-       // delete &l; // caution
+        delete &l; // caution
     }
     newtask->printAllTasks();
     delete newtask;
