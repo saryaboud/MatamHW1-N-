@@ -138,7 +138,7 @@ namespace mtm {
                     i++;
                 }
                 if (tmp->next == nullptr) {
-                    //throw std::out_of_range("Iterator out of range");
+                    throw std::out_of_range("Iterator out of range");
                     return;
                 }
                 node *current = tmp->next;
@@ -146,7 +146,7 @@ namespace mtm {
                 delete current;
                 len--;
             } else {
-                //throw std::out_of_range("Iterator out of range");
+                throw std::out_of_range("Iterator out of range");
                 return;
             }
         }
@@ -250,7 +250,7 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
-            if (index >= s->len) {
+            if (index > s->len) {
                 throw std::out_of_range("Iterator out of range");
             }
             int i = 0;
