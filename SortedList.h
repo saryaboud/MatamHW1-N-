@@ -250,7 +250,7 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
-            if (index > s->len) {
+            if (index >= s->len || index < 0) {
                throw std::out_of_range("out of range");//test 3 and 6
             }
             int i = 0;
