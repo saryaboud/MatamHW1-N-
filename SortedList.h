@@ -130,7 +130,7 @@ namespace mtm {
                 this->head = this->head->next;
                 delete tmp;
                 len--;
-            } else if (s.index <= len) {
+            }
                 int i = 0;
                 node *tmp = this->head;
                 while (i < s.index - 1) {
@@ -142,7 +142,6 @@ namespace mtm {
                 tmp->next = tmp->next->next;
                 delete current;
                 len--;
-            }
         }
 
         int length() const {
