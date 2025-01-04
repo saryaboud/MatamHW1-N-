@@ -145,14 +145,14 @@ namespace mtm {
             return length;
         }
 
-        SortedList &filter(std::function<bool(T)> func) {
+        SortedList *filter(std::function<bool(T)> func) {
             auto *newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {
                 if (func(tmp->value)) newlist->insert(tmp->value);
                 tmp = tmp->next;
             }
-            return *newlist;
+            return newlist;
         }
 
         /*SortedList &filter(std::function<bool(T)> func) {
@@ -169,14 +169,14 @@ namespace mtm {
             return *newlist;
         }*/
 
-        SortedList &apply(std::function<T(T)> func) {
+        SortedList *apply(std::function<T(T)> func) {
             auto *newlist = new SortedList();
             node *tmp = this->head;
             while (tmp != nullptr) {
                 newlist->insert(func(tmp->value));
                 tmp = tmp->next;
             }
-            return *newlist;
+            return newlist;
         }
 
 
