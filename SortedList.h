@@ -52,14 +52,16 @@ namespace mtm {
             }
             len = other.len;
             head = new node(other.head->value);
-            node *current = other.head->next;
-            node *tmp = head;
-            while (current != nullptr) {
-                tmp->next = new node(current->value);
-                tmp = tmp->next;
-                current = current->next;
+            if (other.head->next != nullptr) {
+                node *current = other.head->next;
+                node *tmp = head;
+                while (current != nullptr) {
+                    tmp->next = new node(current->value);
+                    tmp = tmp->next;
+                    current = current->next;
+                }
+                tmp->next = nullptr;
             }
-            tmp->next = nullptr;
         }
 
         SortedList &operator=(const SortedList &other) {
@@ -76,14 +78,16 @@ namespace mtm {
             }
             len = other.len;
             head = new node(other.head->value);
-            node *current = other.head->next;
-            node *tmp = head;
-            while (current != nullptr) {
-                tmp->next = new node(current->value);
-                tmp = tmp->next;
-                current = current->next;
+            if (other.head->next != nullptr) {
+                node *current = other.head->next;
+                node *tmp = head;
+                while (current != nullptr) {
+                    tmp->next = new node(current->value);
+                    tmp = tmp->next;
+                    current = current->next;
+                }
+                tmp->next = nullptr;
             }
-            tmp->next = nullptr;
             return *this;
         }
 
@@ -101,21 +105,27 @@ namespace mtm {
                 len++;
                 return;
             }
-            node *tmp = head->next;
-            node *pre = head;
-            while (tmp != nullptr) {
-                if (value > tmp->value) {
-                    newnode->next = tmp;
-                    pre->next = newnode;
-                    len++;
-                    return;
+            if (head->next != nullptr) {
+                node *tmp = head->next;
+                node *pre = head;
+                while (tmp != nullptr) {
+                    if (value > tmp->value) {
+                        newnode->next = tmp;
+                        pre->next = newnode;
+                        len++;
+                        return;
+                    }
+                    tmp = tmp->next;
+                    pre = pre->next;
                 }
-                tmp = tmp->next;
-                pre = pre->next;
+                pre->next = newnode;
+                newnode->next = nullptr;
+                len++;
+            } else {
+                head->next = newnode;
+                newnode->next = nullptr;
+                len++;
             }
-            pre->next = newnode;
-            newnode->next = nullptr;
-            len++;
         }
 
         void remove(const ConstIterator &s) {
@@ -123,7 +133,8 @@ namespace mtm {
                 node *tmp = head;
                 this->head = this->head->next;
                 delete tmp;
-            } else {
+                len--;
+            } else if (s.index <= len) {
                 int i = 0;
                 node *tmp = this->head;
                 while (i < s.index - 1) {
@@ -133,8 +144,8 @@ namespace mtm {
                 node *current = tmp->next;
                 tmp->next = tmp->next->next;
                 delete current;
-            }
-            len--;
+                len--;
+            } else { throw std::out_of_range("Iterator out of range"); }
         }
 
         int length() const {
