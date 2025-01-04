@@ -105,27 +105,23 @@ namespace mtm {
                 len++;
                 return;
             }
-            if (head->next != nullptr) {
-                node *tmp = head->next;
-                node *pre = head;
-                while (tmp != nullptr) {
-                    if (value > tmp->value) {
-                        newnode->next = tmp;
+            node *tmp = head;
+            node *pre = nullptr;
+            while (tmp != nullptr) {
+                if (value > tmp->value) {
+                    newnode->next = tmp;
+                    if (pre != nullptr) {
                         pre->next = newnode;
-                        len++;
-                        return;
                     }
-                    tmp = tmp->next;
-                    pre = pre->next;
+                    len++;
+                    return;
                 }
-                pre->next = newnode;
-                newnode->next = nullptr;
-                len++;
-            } else {
-                head->next = newnode;
-                newnode->next = nullptr;
-                len++;
+                pre = tmp;
+                tmp = tmp->next;
             }
+            pre->next = newnode;
+            newnode->next = nullptr;
+            len++;
         }
 
         void remove(const ConstIterator &s) {
@@ -134,12 +130,14 @@ namespace mtm {
                 this->head = this->head->next;
                 delete tmp;
                 len--;
-            } else if (s.index <= len) {
+            } else if (s.index < len) {
                 int i = 0;
                 node *tmp = this->head;
                 while (i < s.index - 1) {
                     tmp = tmp->next;
                     i++;
+                } if (tmp->next == nullptr) {
+                    throw std::out_of_range("Iterator out of range");
                 }
                 node *current = tmp->next;
                 tmp->next = tmp->next->next;
@@ -247,22 +245,28 @@ namespace mtm {
 
         //operators
         const T &operator*() const {
-            if (index > s->len) {
+            if (index >= s->len) {
                 throw std::out_of_range("Iterator out of range");
             }
             int i = 0;
             node *tmp = s->head;
             while (i < index) {
+                if (tmp == nullptr) {
+                    throw std::out_of_range("Iterator out of range");
+                }
                 tmp = tmp->next;
                 i++;
             }
             return tmp->value;
         }
 
-        const T &operator++() {
-            index++;
-            return *(*this);
+        const ConstIterator& operator++() {
+            if (index < s->len) {
+                index++;
+            }
+            return *this;
         }
+
 
         bool operator!=(const ConstIterator &other) const {
             if (other.index != index) return false;
