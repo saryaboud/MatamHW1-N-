@@ -72,8 +72,6 @@ namespace mtm {
             head = nullptr;
             len = 0;
             if (other.head == nullptr) {
-                head = nullptr;
-                len = 0;
                 return *this;
             }
             len = other.len;
@@ -109,7 +107,8 @@ namespace mtm {
                 if (value > tmp->value) {
                     newnode->next = tmp;
                     pre->next = newnode;
-                    break;
+                    len++;
+                    return;
                 }
                 tmp = tmp->next;
                 pre = pre->next;
