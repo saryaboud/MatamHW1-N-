@@ -270,7 +270,7 @@ namespace mtm {
                 index++;
             }
             if(index >= s->len) {
-                throw std::out_of_range("Iterator out of range");
+                throw std::out_of_range("Iterator out of rangee");
             }
             return *this;
         }
