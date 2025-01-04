@@ -136,14 +136,19 @@ namespace mtm {
                 while (i < s.index - 1) {
                     tmp = tmp->next;
                     i++;
-                } if (tmp->next == nullptr) {
-                    throw std::out_of_range("Iterator out of range");
+                }
+                if (tmp->next == nullptr) {
+                    //throw std::out_of_range("Iterator out of range");
+                    return;
                 }
                 node *current = tmp->next;
                 tmp->next = tmp->next->next;
                 delete current;
                 len--;
-            } else { throw std::out_of_range("Iterator out of range"); }
+            } else {
+                //throw std::out_of_range("Iterator out of range");
+                return;
+            }
         }
 
         int length() const {
@@ -260,7 +265,7 @@ namespace mtm {
             return tmp->value;
         }
 
-        const ConstIterator& operator++() {
+        const ConstIterator &operator++() {
             if (index < s->len) {
                 index++;
             }
