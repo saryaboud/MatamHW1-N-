@@ -54,12 +54,14 @@ void TaskManager::bumpPriorityByType(TaskType type, int priority) {
                 Task *new_task = new Task(task.getPriority() + priority, task.getType()
                                           , task.getDescription());
                 new_task->setId(task.getId());
-                return *new_task;
+                task = *new_task;
+                delete new_task; // caution
             }
             return task;
-        };
+         };
         SortedList<Task> l = list.apply(func);
         arr[i].setTasks(l);
+        delete &l; // caution
     }
 }
 
@@ -95,8 +97,9 @@ void TaskManager::printTasksByType(TaskType type) const {
             }
             return false;
         };
-        list = list.filter(func);
-        newtask->arr[i].setTasks(list);
+        SortedList<Task> l = list.filter(func);
+        newtask->arr[i].setTasks(l);
+        delete &l; // caution
     }
     newtask->printAllTasks();
     delete newtask;
