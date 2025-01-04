@@ -130,7 +130,7 @@ namespace mtm {
                 this->head = this->head->next;
                 delete tmp;
                 len--;
-            } else if (s.index < len) {
+            } else if (s.index <= len) {
                 int i = 0;
                 node *tmp = this->head;
                 while (i < s.index - 1) {
