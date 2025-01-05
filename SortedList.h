@@ -245,34 +245,36 @@ namespace mtm {
         }
 
         ~ConstIterator() = default;
-
-        //operators
-        const T &operator*() const {
+        const T& operator*() const {
+            // Check if index is out of bounds
             if (index >= s->len || index < 0) {
-                throw std::out_of_range("out of range"); //test 3 and 6
+                throw std::out_of_range("Iterator out of range");
             }
-            int i = 0;
-            node *tmp = s->head;
-            while (i < index) {
+
+            // Traverse to the correct node (if using a linked list)
+            node* tmp = s->head;
+            for (int i = 0; i < index; ++i) {
                 tmp = tmp->next;
-                i++;
             }
+
+            // Return the value at the current node
             return tmp->value;
         }
 
-        const ConstIterator &operator++() {
-              if(index >= s->len) {
-                  throw std::out_of_range("Iterator out of range");
-              }
-                index++;
+        const ConstIterator& operator++() {
+            // Check if the iterator is already past the last valid element
+            if (index >= s->len) {
+                throw std::out_of_range("Iterator out of range");
+            }
+
+            // Increment the index
+            index++;
             return *this;
         }
 
-
-        bool operator!=(const ConstIterator &other) const {
-            if (other.index != index) return false;
-            if (other.s != s) return false;
-            return true;
+        bool operator!=(const ConstIterator& other) const {
+            // Return true if the iterators point to different nodes or have different indices
+            return index != other.index || s != other.s;
         }
 
 

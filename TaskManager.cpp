@@ -74,30 +74,29 @@ void TaskManager::printAllEmployees() const {
 }
 
 void TaskManager::printAllTasks() const {
-    for(int priority = 100;priority >= 0;priority--){
-        for(int j = 0; j < this->length_();j++){
-            for(auto const& x : this->arr[j].getTasks()){
-                if(x.getPriority() == priority)
-                    std::cout << x << std::endl;
-            }
+    SortedList<Task> newlist;
+    for (int i = 0; i < this->length_(); i++){
+        for(auto x : arr[i].getTasks()){
+            newlist.insert(x);
         }
+    }
+    // print the new node
+    for (auto x : newlist) {
+        std::cout << x << std::endl;
     }
 }
 
 void TaskManager::printTasksByType(TaskType type) const {
-    int length = this->length_();
-    auto *newtask = new TaskManager;
-    for (int i = 0; i < length; i++) {
-        SortedList<Task> list = arr[i].getTasks();
-        auto func = [type](Task task) -> bool {
-            if (task.getType() == type) {
-                return true;
-            }
-            return false;
-        };
-        SortedList<Task> l = list.filter(func);
-        newtask->arr[i].setTasks(l);
+    SortedList<Task> newlist;
+
+    for(int i = 0 ;i < this->length_();i++){
+        for(auto x : this->arr[i].getTasks()){
+            if(x.getType() == type)
+            newlist.insert(x);
+        }
     }
-    newtask->printAllTasks();
-    delete newtask;
+    //print the new node
+    for (auto x : newlist) {
+        std::cout << x << std::endl;
+    }
 }
