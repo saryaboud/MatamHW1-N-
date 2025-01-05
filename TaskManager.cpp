@@ -74,16 +74,13 @@ void TaskManager::printAllEmployees() const {
 }
 
 void TaskManager::printAllTasks() const {
-    SortedList<Task> newlist;
-    int length = this->length_();
-    for (int i = 0; i < length; i++) {
-        SortedList<Task> list = arr[i].getTasks();
-        for (auto it = list.begin(); it != list.end(); ++it) {
-            newlist.insert(*it);
+    for(int priority = 100;priority >= 0;priority--){
+        for(int j = 0; j < this->length_();j++){
+            for(auto const& x : this->arr[j].getTasks()){
+                if(x.getPriority() == priority)
+                    std::cout << x << std::endl;
+            }
         }
-    }
-    for (auto it = newlist.begin(); it != newlist.end(); ++it) {
-        std::cout << *it << std::endl;
     }
 }
 
