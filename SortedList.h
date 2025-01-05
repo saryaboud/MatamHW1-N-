@@ -261,12 +261,10 @@ namespace mtm {
         }
 
         const ConstIterator &operator++() {
-            if (index < s->len) {
+              if(index >= s->len) {
+                  throw std::out_of_range("Iterator out of range");
+              }
                 index++;
-            }
-            /*  if(index >= s->len) {
-                  throw std::out_of_range("Iterator out of rangee");
-              }*/
             return *this;
         }
 
