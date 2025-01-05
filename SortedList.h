@@ -125,12 +125,17 @@ namespace mtm {
         }
 
         void remove(const ConstIterator &s) {
+            if(s.index < 0 || s.index >= length())//index out of range
+                return;//do nth
+            //case 1
             if (s.index == 0) {
                 node *tmp = head;
                 this->head = this->head->next;
                 delete tmp;
                 len--;
+                return;
             }
+            //case 2
                 int i = 0;
                 node *tmp = this->head;
                 while (i < s.index - 1) {
