@@ -169,20 +169,6 @@ namespace mtm {
             return newlist;
         }
 
-        /*SortedList &filter(std::function<bool(T)> func) {
-            SortedList newlist = new SortedList();
-            int i=0;
-            Node *tmp=head;
-            while (i<length) {
-                if(func(tmp->data)) {
-                    newlist.insert(tmp->data);
-                }
-                tmp=tmp->next;
-                i++;
-            }
-            return *newlist;
-        }*/
-
         SortedList apply(std::function<T(T)> func) {
             SortedList newlist;
             node *tmp = this->head;

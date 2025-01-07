@@ -1,0 +1,646 @@
+*-.   commit 3bb456a6505b8c35e04c0bf3401191954eae19e7
+|\ \  Merge: 07b511b 406bc2b 26db3d3
+| | | Author: Your Name <sary.aboud@campus.technion.ac.il>
+| | | Date:   Tue Jan 7 06:18:44 2025 +0200
+| | | 
+| | |     WIP on main: 07b511b all the 6 test are passed
+| | | 
+| | * commit 26db3d3612a28323ab81c7fbbc78cf0cb7facc44
+| |   Author: Your Name <sary.aboud@campus.technion.ac.il>
+| |   Date:   Tue Jan 7 06:18:44 2025 +0200
+| |   
+| |       untracked files on main: 07b511b all the 6 test are passed
+| |   
+| |    TaskManagerTest   | Bin 0 -> 494072 bytes
+| |    test_results.html | 400 ++++++++++++++++++++++++++++++++++++++++++++++++
+| |    2 files changed, 400 insertions(+)
+| | 
+| * commit 406bc2b4d60300a6d02116df8ee384a673db966d
+|/  Author: Your Name <sary.aboud@campus.technion.ac.il>
+|   Date:   Tue Jan 7 06:18:44 2025 +0200
+|   
+|       index on main: 07b511b all the 6 test are passed
+|   
+|    .gitmodules        | 6 ++++++
+|    MatamGenericTester | 1 +
+|    TechnionMatam      | 1 +
+|    3 files changed, 8 insertions(+)
+| 
+* commit 07b511b55840ca910005381466099264fb228167
+| Author: Your Name <sary.aboud@campus.technion.ac.il>
+| Date:   Mon Jan 6 00:56:29 2025 +0200
+| 
+|     all the 6 test are passed
+| 
+|  SortedList.h                                      |  38 ++++++++++---------
+|  TaskManager                                       | Bin 86944 -> 83368 bytes
+|  TaskManager.cpp                                   |  39 ++++++++++----------
+|  .../CMakeFiles/HW3_2425A.dir/Person.cpp.obj       | Bin 88479 -> 88509 bytes
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.obj  | Bin 175306 -> 159140 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.obj         | Bin 179624 -> 179666 bytes
+|  .../CMakeFiles/HW3_2425A.dir/objects.a            | Bin 536936 -> 520714 bytes
+|  cmake-build-debug/HW3_2425A.exe                   | Bin 449999 -> 438405 bytes
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |   4 +-
+|  test1.out                                         |  31 +++++++++++++++-
+|  10 files changed, 70 insertions(+), 42 deletions(-)
+| 
+* commit 2ab2da3427d8078b74232944dee11f105ea6a2e1
+| Author: Your Name <sary.aboud@campus.technion.ac.il>
+| Date:   Sun Jan 5 21:45:50 2025 +0200
+| 
+|     all the 6 tests is [OK] corrected the print all function and * operator
+| 
+|  TaskManager                                       | Bin 86200 -> 86944 bytes
+|  TaskManager.cpp                                   |  15 ++++++---------
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.obj  | Bin 175892 -> 175306 bytes
+|  .../CMakeFiles/HW3_2425A.dir/objects.a            | Bin 537522 -> 536936 bytes
+|  cmake-build-debug/HW3_2425A.exe                   | Bin 449999 -> 449999 bytes
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |   4 ++--
+|  6 files changed, 8 insertions(+), 11 deletions(-)
+| 
+* commit 364b43ffbf6f089b38fbdaa954a40945e8500dff
+| Author: Your Name <sary.aboud@campus.technion.ac.il>
+| Date:   Sun Jan 5 19:47:53 2025 +0200
+| 
+|     test 2 is now ok (correected the ++ operator)
+| 
+|  SortedList.h                                      |   8 +++-----
+|  TaskManager                                       | Bin 86200 -> 86200 bytes
+|  .../CMakeFiles/HW3_2425A.dir/Person.cpp.obj       | Bin 88193 -> 88479 bytes
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.obj  | Bin 175606 -> 175892 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.obj         | Bin 176173 -> 179624 bytes
+|  .../CMakeFiles/HW3_2425A.dir/objects.a            | Bin 533500 -> 537522 bytes
+|  cmake-build-debug/HW3_2425A.exe                   | Bin 447524 -> 449999 bytes
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |   4 ++--
+|  8 files changed, 5 insertions(+), 7 deletions(-)
+| 
+* commit fc1ee02852d19948e62565c87b7272380de48862
+| Author: Your Name <sary.aboud@campus.technion.ac.il>
+| Date:   Sun Jan 5 17:31:49 2025 +0200
+| 
+|     add retrun in the remove but still didnt fix tests
+| 
+|  .idea/editor.xml                                  |  100 +-
+|  CMakeLists.txt                                    |    4 +-
+|  SortedList.h                                      |    5 +
+|  TaskManager                                       |  Bin 169256 -> 86200 bytes
+|  .../v1/reply/cache-v2-408586ba678f4f05ed84.json   | 1399 +++++++++++++++
+|  .../v1/reply/cache-v2-d69c63be0356e8e4db55.json   | 1163 ------------
+|  .../reply/cmakeFiles-v1-7ad0886ddd7ebf7e16f3.json |  180 ++
+|  .../reply/cmakeFiles-v1-cfd1c524f55f7fa387be.json |  161 --
+|  ...son => codemodel-v2-2065e104efcbee1747de.json} |  120 +-
+|  ...> directory-.-Debug-d0094a50bb2071803777.json} |   28 +-
+|  ...6.json => index-2025-01-05T14-42-39-0979.json} |  216 +--
+|  ...get-HW3_2425A-Debug-9eeaa78d084182b47cab.json} |  261 +--
+|  .../reply/toolchains-v1-08b140c44408a684d425.json |   93 +
+|  .../reply/toolchains-v1-73ba5002afb33725fe0c.json |   93 -
+|  cmake-build-debug/CMakeCache.txt                  |  794 +++++----
+|  .../CMakeFiles/3.28.1/CMakeCCompiler.cmake        |  148 +-
+|  .../CMakeFiles/3.28.1/CMakeCXXCompiler.cmake      |  170 +-
+|  .../3.28.1/CMakeDetermineCompilerABI_C.bin        |  Bin 17000 -> 43069 bytes
+|  .../3.28.1/CMakeDetermineCompilerABI_CXX.bin      |  Bin 16984 -> 43088 bytes
+|  .../CMakeFiles/3.28.1/CMakeRCCompiler.cmake       |    6 +
+|  .../CMakeFiles/3.28.1/CMakeSystem.cmake           |   30 +-
+|  .../3.28.1/CompilerIdC/CMakeCCompilerId.c         | 1760 +++++++++----------
+|  .../3.28.1/CompilerIdC/CMakeCCompilerId.o         |  Bin 1712 -> 0 bytes
+|  .../CMakeFiles/3.28.1/CompilerIdC/a.exe           |  Bin 0 -> 43144 bytes
+|  .../3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp   | 1738 +++++++++---------
+|  .../3.28.1/CompilerIdCXX/CMakeCXXCompilerId.o     |  Bin 1712 -> 0 bytes
+|  .../CMakeFiles/3.28.1/CompilerIdCXX/a.exe         |  Bin 0 -> 43172 bytes
+|  .../CMakeFiles/CMakeConfigureLog.yaml             |  853 ++++-----
+|  .../CMakeFiles/CMakeDirectoryInformation.cmake    |   16 +
+|  .../CMakeFiles/HW3_2425A.dir/DependInfo.cmake     |   26 +
+|  .../CMakeFiles/HW3_2425A.dir/Person.cpp.obj       |  Bin 0 -> 88193 bytes
+|  .../CMakeFiles/HW3_2425A.dir/Person.cpp.obj.d     |  169 ++
+|  .../CMakeFiles/HW3_2425A.dir/Task.cpp.obj         |  Bin 0 -> 84861 bytes
+|  .../CMakeFiles/HW3_2425A.dir/Task.cpp.obj.d       |  145 ++
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.o    |  Bin 354944 -> 0 bytes
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.obj  |  Bin 0 -> 175606 bytes
+|  .../HW3_2425A.dir/TaskManager.cpp.obj.d           |  170 ++
+|  .../CMakeFiles/HW3_2425A.dir/build.make           |  159 ++
+|  .../CMakeFiles/HW3_2425A.dir/cmake_clean.cmake    |   19 +
+|  .../HW3_2425A.dir/compiler_depend.internal        |  661 +++++++
+|  .../CMakeFiles/HW3_2425A.dir/compiler_depend.make | 1001 +++++++++++
+|  .../CMakeFiles/HW3_2425A.dir/compiler_depend.ts   |    2 +
+|  .../CMakeFiles/HW3_2425A.dir/depend.make          |    2 +
+|  .../CMakeFiles/HW3_2425A.dir/flags.make           |   10 +
+|  .../CMakeFiles/HW3_2425A.dir/link.txt             |    3 +
+|  .../CMakeFiles/HW3_2425A.dir/linkLibs.rsp         |    1 +
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.o           |  Bin 167056 -> 0 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.obj         |  Bin 0 -> 176173 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.obj.d       |  170 ++
+|  .../CMakeFiles/HW3_2425A.dir/objects.a            |  Bin 0 -> 533500 bytes
+|  .../CMakeFiles/HW3_2425A.dir/objects1.rsp         |    1 +
+|  .../CMakeFiles/HW3_2425A.dir/progress.make        |    6 +
+|  cmake-build-debug/CMakeFiles/Makefile.cmake       |   56 +
+|  cmake-build-debug/CMakeFiles/Makefile2            |  111 ++
+|  .../CMakeFiles/TargetDirectories.txt              |    6 +-
+|  cmake-build-debug/CMakeFiles/clion-Debug-log.txt  |   17 +-
+|  .../CMakeFiles/clion-environment.txt              |    5 +-
+|  cmake-build-debug/CMakeFiles/cmake.check_cache    |    2 +-
+|  cmake-build-debug/CMakeFiles/progress.marks       |    1 +
+|  cmake-build-debug/CMakeFiles/rules.ninja          |   64 -
+|  cmake-build-debug/HW3_2425A.exe                   |  Bin 0 -> 447524 bytes
+|  cmake-build-debug/Makefile                        |  261 +++
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |    6 +-
+|  cmake-build-debug/cmake_install.cmake             |   98 +-
+|  cmake-build-debug/untitled59.cbp                  |  113 ++
+|  test1.out                                         |    3 +-
+|  66 files changed, 7993 insertions(+), 4633 deletions(-)
+| 
+* commit b4784e16ab127f57d76e77d61d5097d2e63e7fa8
+| Author: Jad Marie <marie.jad12.8@gmail.com>
+| Date:   Sat Jan 4 23:32:43 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 3 +--
+|  1 file changed, 1 insertion(+), 2 deletions(-)
+| 
+* commit 033a2ef7357a32c1bbea4374cf043bc7b1c87dd4
+| Author: Jad Marie <marie.jad12.8@gmail.com>
+| Date:   Sat Jan 4 23:30:40 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 99e1aef5c978711a7adb766f36074bc40468eb62
+| Author: Jad Marie <marie.jad12.8@gmail.com>
+| Date:   Sat Jan 4 23:27:36 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 16 +++++-----------
+|  1 file changed, 5 insertions(+), 11 deletions(-)
+| 
+* commit 5e90906afb7a417bb6d06d49e0f31ae70886b6f0
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:30:16 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 3 ---
+|  1 file changed, 3 deletions(-)
+| 
+* commit 6e26d3606414bc64529b61bb309d2099827a8d43
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:27:55 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 795613e4fbd88403a0a55f20f838634c14bc0202
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:23:36 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 03271ba287fa94f956dc02bee363f59bdf0eb90b
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:20:41 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 5669fbdb4421ac784f1635c0d186965d0f49a4bc
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:18:33 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 9a46da3b80c9f89c184712980256e51e11533ef7
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:16:15 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit d642c2a683e8f862e7536c199ea85cb6b608c91f
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:13:59 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 12 ++++++------
+|  1 file changed, 6 insertions(+), 6 deletions(-)
+| 
+* commit 29d6e26c3a7bb83f9f849dc512e99f4ff0f3234e
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:10:23 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 4a92062ec5a0aa669509a67fb28102c62e647c4e
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:08:21 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 65842f5f2ccfede93f581e546341da03a9ad0820
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 04:06:41 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h                                      |   9 ++++++---
+|  TaskManager                                       | Bin 169256 -> 169256 bytes
+|  cmake-build-debug/.ninja_deps                     | Bin 113844 -> 121564 bytes
+|  cmake-build-debug/.ninja_log                      |   2 ++
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.o    | Bin 353832 -> 354944 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.o           | Bin 168296 -> 167056 bytes
+|  6 files changed, 8 insertions(+), 3 deletions(-)
+| 
+* commit 49e6ce4e49207c624122ff3314e447b6d8915e67
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 03:56:04 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 6 +++---
+|  1 file changed, 3 insertions(+), 3 deletions(-)
+| 
+* commit d4fd4cc208e189c28a85336ee5ab10b1cf7ddc70
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 03:53:20 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 13 +++++++++----
+|  1 file changed, 9 insertions(+), 4 deletions(-)
+| 
+* commit 35b8946be26ee37e3f14b6491b5cf0822b3a4df5
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 03:49:47 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h |  48 ++++++++++++++++++++++++++----------------------
+|  TaskManager  | Bin 169256 -> 169256 bytes
+|  2 files changed, 26 insertions(+), 22 deletions(-)
+| 
+* commit f58be9397d68004879750f3e43931d07bf4a49e3
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 03:36:32 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h |  71 +++++++++++++++++++++++++++++++++------------------------
+|  TaskManager  | Bin 169192 -> 169256 bytes
+|  test2.out    |   1 +
+|  3 files changed, 42 insertions(+), 30 deletions(-)
+| 
+* commit b82fc39c5d1460c8c49636d849782ad58180fbc2
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 03:10:01 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h | 5 ++---
+|  1 file changed, 2 insertions(+), 3 deletions(-)
+| 
+* commit 35b1dbd74a99e37d9bb5e4af46e0b6c1fe43b628
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:53:27 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h |   2 ++
+|  TaskManager  | Bin 169192 -> 169192 bytes
+|  2 files changed, 2 insertions(+)
+| 
+* commit 1b53226dc59339aa145c57e7855007331dc20905
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:40:22 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    | 14 +++++++-------
+|  TaskManager.cpp | 10 ++++------
+|  2 files changed, 11 insertions(+), 13 deletions(-)
+| 
+* commit 9dfa9a825ab7738319743e5acbceafc42a050550
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:29:25 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager     | Bin 169176 -> 169192 bytes
+|  TaskManager.cpp |   2 ++
+|  TaskManager.h   |   2 ++
+|  3 files changed, 4 insertions(+)
+| 
+* commit 2ea4a55713198be2bb18fadc1c3b4924468a1ae3
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:23:05 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    |  8 ++++----
+|  TaskManager.cpp | 12 ++++++------
+|  2 files changed, 10 insertions(+), 10 deletions(-)
+| 
+* commit 2f8319b534e73d835fa0f216c9d0f9603201ec2e
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:16:45 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager.cpp | 4 ++--
+|  1 file changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit 03e3f73bf326b0fedfed4ed9d1fc1550cf954a16
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:13:21 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager     | Bin 168904 -> 169176 bytes
+|  TaskManager.cpp |   4 ++--
+|  2 files changed, 2 insertions(+), 2 deletions(-)
+| 
+* commit bf3263480339c05f97c3cea014595f1d9bb8c3eb
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 02:10:26 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager.cpp | 11 +++++++----
+|  1 file changed, 7 insertions(+), 4 deletions(-)
+| 
+* commit 3857da878855c829ebb27e948700ad1d12ea4f5b
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 00:37:25 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager.cpp                                   |   5 ++---
+|  cmake-build-debug/.ninja_deps                     | Bin 109984 -> 113844 bytes
+|  cmake-build-debug/.ninja_log                      |   1 +
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.o    | Bin 352904 -> 353832 bytes
+|  4 files changed, 3 insertions(+), 3 deletions(-)
+| 
+* commit ab2755b21e95440d6544c985c29e0eb396655f44
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Sat Jan 4 00:27:27 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  Person.h                                          |   1 +
+|  SortedList.h                                      |   1 -
+|  TaskManager                                       | Bin 167528 -> 168904 bytes
+|  TaskManager.cpp                                   |  16 ++++++++++++++--
+|  cmake-build-debug/.ninja_deps                     | Bin 0 -> 109984 bytes
+|  cmake-build-debug/.ninja_log                      |   3 +++
+|  .../CMakeFiles/HW3_2425A.dir/TaskManager.cpp.o    | Bin 0 -> 352904 bytes
+|  .../CMakeFiles/HW3_2425A.dir/main.cpp.o           | Bin 0 -> 168296 bytes
+|  8 files changed, 18 insertions(+), 3 deletions(-)
+| 
+* commit 33131569f7d8aec6483a1aef93b6aefbc91f519b
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 23:53:12 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    | 2 +-
+|  TaskManager.cpp | 3 +--
+|  2 files changed, 2 insertions(+), 3 deletions(-)
+| 
+* commit e1fe88ab8dbdd2fc43e584d1e36609f3900cfa0d
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 23:38:57 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    | 4 ++++
+|  TaskManager.cpp | 2 +-
+|  2 files changed, 5 insertions(+), 1 deletion(-)
+| 
+* commit c56e76ed7b82b5cb282be6ea3dfc02759f16e282
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 21:52:12 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager.cpp | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 253d8d4393655fd309c5d22586811df6ac63942b
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 21:47:40 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    |  17 ++++++++++-------
+|  TaskManager     | Bin 167400 -> 167528 bytes
+|  TaskManager.cpp |  16 ++++++++--------
+|  TaskManager.h   |   2 +-
+|  4 files changed, 19 insertions(+), 16 deletions(-)
+| 
+* commit 85c7b5a45d9c10c0a7bfb86e0a498378583a47ff
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 21:22:44 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h |  10 ++++++++--
+|  TaskManager  | Bin 167080 -> 167400 bytes
+|  2 files changed, 8 insertions(+), 2 deletions(-)
+| 
+* commit a5577806e33a950623b80000429c81547dbc743f
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 20:59:14 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  TaskManager     | Bin 167080 -> 167080 bytes
+|  TaskManager.cpp |   2 +-
+|  test3.out       |   1 +
+|  3 files changed, 2 insertions(+), 1 deletion(-)
+| 
+* commit f39cf86276e02bb7e185377396c4fa533c30cb94
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Fri Jan 3 02:01:22 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    |  10 +++++++---
+|  TaskManager     | Bin 166840 -> 167080 bytes
+|  TaskManager.cpp |   2 +-
+|  test1.out       |   1 +
+|  4 files changed, 9 insertions(+), 4 deletions(-)
+| 
+* commit 473f32b89973c8ab7096e095dd40f7daf4bc328a
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Thu Jan 2 23:55:18 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h    | 3 ++-
+|  TaskManager.cpp | 1 +
+|  2 files changed, 3 insertions(+), 1 deletion(-)
+| 
+* commit 1434c7de80d7e78c2c749a8c1871e95839a0435f
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Thu Jan 2 23:44:02 2025 +0200
+| 
+|     debug compilation errors
+| 
+|  SortedList.h |  32 ++++++++++++++++----------------
+|  TaskManager  | Bin 0 -> 166840 bytes
+|  2 files changed, 16 insertions(+), 16 deletions(-)
+| 
+* commit c6ad4b8e987043e642105ccfe8e0729e0e8fc702
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Thu Jan 2 04:34:12 2025 +0200
+| 
+|     add the TaskManager.cpp file
+| 
+|  .idea/.name                                       |    1 +
+|  CMakeLists.txt                                    |    3 +-
+|  Person.h                                          |    1 +
+|  SortedList.h                                      |   30 +-
+|  TaskManager.cpp                                   |   92 ++
+|  TaskManager.h                                     |    8 +-
+|  .../reply/cmakeFiles-v1-cc3b113f523e85452667.json | 1214 -------------------
+|  .../reply/cmakeFiles-v1-cfd1c524f55f7fa387be.json |  161 +++
+|  ...son => codemodel-v2-d846a89821b13d477e36.json} |    2 +-
+|  ...0.json => index-2025-01-01T20-35-20-0876.json} |    8 +-
+|  ...get-HW3_2425A-Debug-ffcbde6fa59d4a1aeb77.json} |   12 +-
+|  cmake-build-debug/CMakeFiles/clion-Debug-log.txt  |   14 +-
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |    4 +-
+|  cmake-build-debug/build.ninja                     |   17 +-
+|  14 files changed, 319 insertions(+), 1248 deletions(-)
+| 
+* commit d2f150a1925afeddf888eb41de6a3f8a2721feae
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Wed Jan 1 04:25:26 2025 +0200
+| 
+|     add apply and filter function
+| 
+|  SortedList.h | 25 +++++++++++++++++++++++++
+|  1 file changed, 25 insertions(+)
+| 
+* commit e88305ff009d38bee752be48bf7d48eaa6af4d93
+| Author: Jad Marie <jadmarie@Jads-Laptop.local>
+| Date:   Wed Jan 1 03:56:53 2025 +0200
+| 
+|     add the initial operators
+| 
+|  .DS_Store                                         |  Bin 0 -> 8196 bytes
+|  .idea/.gitignore                                  |    8 +
+|  .idea/HW3_2425A.iml                               |    2 +
+|  .idea/editor.xml                                  |  103 ++
+|  .idea/misc.xml                                    |    7 +
+|  .idea/modules.xml                                 |    8 +
+|  .idea/vcs.xml                                     |    6 +
+|  CMakeLists.txt                                    |    7 +
+|  SortedList.h                                      |  198 ++-
+|  cmake-build-debug/.cmake/api/v1/query/cache-v2    |    0
+|  .../.cmake/api/v1/query/cmakeFiles-v1             |    0
+|  .../.cmake/api/v1/query/codemodel-v2              |    0
+|  .../.cmake/api/v1/query/toolchains-v1             |    0
+|  .../v1/reply/cache-v2-d69c63be0356e8e4db55.json   | 1163 ++++++++++++++++++
+|  .../reply/cmakeFiles-v1-cc3b113f523e85452667.json | 1214 +++++++++++++++++++
+|  .../reply/codemodel-v2-b76bb4664949e36538d2.json  |   60 +
+|  .../directory-.-Debug-f5ebdc15457944623624.json   |   14 +
+|  .../v1/reply/index-2024-12-31T19-34-27-0450.json  |  108 ++
+|  ...rget-HW3_2425A-Debug-d3619cf42dcd69999f78.json |  111 ++
+|  .../reply/toolchains-v1-73ba5002afb33725fe0c.json |   93 ++
+|  cmake-build-debug/CMakeCache.txt                  |  363 ++++++
+|  .../CMakeFiles/3.28.1/CMakeCCompiler.cmake        |   74 ++
+|  .../CMakeFiles/3.28.1/CMakeCXXCompiler.cmake      |   85 ++
+|  .../3.28.1/CMakeDetermineCompilerABI_C.bin        |  Bin 0 -> 17000 bytes
+|  .../3.28.1/CMakeDetermineCompilerABI_CXX.bin      |  Bin 0 -> 16984 bytes
+|  .../CMakeFiles/3.28.1/CMakeSystem.cmake           |   15 +
+|  .../3.28.1/CompilerIdC/CMakeCCompilerId.c         |  880 ++++++++++++++
+|  .../3.28.1/CompilerIdC/CMakeCCompilerId.o         |  Bin 0 -> 1712 bytes
+|  .../3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp   |  869 +++++++++++++
+|  .../3.28.1/CompilerIdCXX/CMakeCXXCompilerId.o     |  Bin 0 -> 1712 bytes
+|  .../CMakeFiles/CMakeConfigureLog.yaml             |  404 ++++++
+|  .../CMakeFiles/TargetDirectories.txt              |    3 +
+|  cmake-build-debug/CMakeFiles/clion-Debug-log.txt  |   16 +
+|  .../CMakeFiles/clion-environment.txt              |    4 +
+|  cmake-build-debug/CMakeFiles/cmake.check_cache    |    1 +
+|  cmake-build-debug/CMakeFiles/rules.ninja          |   64 +
+|  cmake-build-debug/Testing/Temporary/LastTest.log  |    3 +
+|  cmake-build-debug/build.ninja                     |  145 +++
+|  cmake-build-debug/cmake_install.cmake             |   49 +
+|  39 files changed, 6056 insertions(+), 21 deletions(-)
+| 
+* commit a3481f8f37f2fbd59d824d4020f19d434ec6f9a5
+| Author: Ron Raphaeli <102682845+ronraphaeli@users.noreply.github.com>
+| Date:   Sun Dec 22 10:44:54 2024 +0200
+| 
+|     Update Task.cpp
+| 
+|  Task.cpp | 5 ++++-
+|  1 file changed, 4 insertions(+), 1 deletion(-)
+| 
+* commit ef076db7052b54a8918ae43ebe390b6a7a629909
+| Author: Ron Raphaeli <102682845+ronraphaeli@users.noreply.github.com>
+| Date:   Fri Dec 20 17:02:30 2024 +0200
+| 
+|     Update README.md
+| 
+|  README.md | 5 ++---
+|  1 file changed, 2 insertions(+), 3 deletions(-)
+| 
+* commit ef8a3ce100827ef3fead32a4927a3566fe3d0d5d
+| Author: Ron Raphaeli <102682845+ronraphaeli@users.noreply.github.com>
+| Date:   Fri Dec 20 17:01:08 2024 +0200
+| 
+|     Add files via upload
+| 
+|  Person.cpp           |  51 +++++
+|  Person.h             |  79 ++++++++
+|  README.md            |  13 +-
+|  SortedList.h         |  57 ++++++
+|  Task.cpp             |  83 ++++++++
+|  Task.h               | 115 +++++++++++
+|  TaskManager.h        |  75 +++++++
+|  main.cpp             | 531 +++++++++++++++++++++++++++++++++++++++++++++++++
+|  tests/test1.expected |   3 +
+|  tests/test2.expected |   3 +
+|  tests/test3.expected |  30 +++
+|  tests/test4.expected |   3 +
+|  tests/test5.expected |   3 +
+|  tests/test6.expected |  15 ++
+|  14 files changed, 1055 insertions(+), 6 deletions(-)
+| 
+* commit 5bdbf99b46b6f1558a47c5533aefc209c37e23d4
+| Author: Ron Raphaeli <102682845+ronraphaeli@users.noreply.github.com>
+| Date:   Fri Dec 20 16:57:29 2024 +0200
+| 
+|     Update README.md
+| 
+|  README.md | 7 ++++++-
+|  1 file changed, 6 insertions(+), 1 deletion(-)
+| 
+* commit 6c999dc9a584fbf8c3a296c357c16141db7b5abe
+  Author: Ron Raphaeli <102682845+ronraphaeli@users.noreply.github.com>
+  Date:   Fri Dec 20 16:57:09 2024 +0200
+  
+      Initial commit
+  
+   README.md | 1 +
+   1 file changed, 1 insertion(+)
