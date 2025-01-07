@@ -169,7 +169,7 @@ namespace mtm {
             return newlist;
         }
 
-        SortedList apply(std::function<T(T)> func) {
+        SortedList apply(std::function<T(T)> func) const{
             SortedList newlist;
             node *tmp = this->head;
             while (tmp != nullptr) {
