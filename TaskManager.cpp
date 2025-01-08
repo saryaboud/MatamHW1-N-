@@ -26,7 +26,8 @@ int TaskManager::length_() const {
 void TaskManager::assignTask(const std::string &personName, const Task &task) {
     int length = this->length_();
     int f = 0;
-    if (length < MAX_PERSONS) {
+    if(length > MAX_PERSONS)throw std::runtime_error("no space");
+    if (length <= MAX_PERSONS) {
         for (int i = 0; i < length; i++) {
             if (this->arr[i].getName() == personName) {
                 Task newtask(task);
@@ -46,7 +47,6 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
         taskid++;
         return;
     }
-    throw std::runtime_error("no space");
 }
 
 void TaskManager::completeTask(const string &personName) {
