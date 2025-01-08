@@ -39,13 +39,13 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
             f = i;
         }
     }
-   if (f < MAX_PERSONS){
-        arr[f] = Person(personName);
+   if (f < MAX_PERSONS - 1){
+        arr[f + 1] = Person(personName);
         Task newtask(task);
         newtask.setId(taskid);
-        arr[f].assignTask(newtask);
+        arr[f + 1].assignTask(newtask);
         taskid++;
-        return;
+
     }
 }
 
