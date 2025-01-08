@@ -43,7 +43,7 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
         }
     }
 
-    // If the person is not found and there's space, add a new person.
+    // If the person is not found and thezzn.
     if (length < MAX_PERSONS) {
         arr[length] = Person(personName); // Add new person at the next free slot.
         Task newTask(task);

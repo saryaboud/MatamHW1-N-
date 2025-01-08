@@ -65,31 +65,34 @@ namespace mtm {
         }
 
         SortedList &operator=(const SortedList &other) {
+            // Self-assignment check
             if (&other == this) return *this;
-            while (head != nullptr) {
-                node *tmp = head;
-                head = head->next;
-                delete tmp;
-            }
-            head = nullptr;
-            len = 0;
-            if (other.head == nullptr) {
-                return *this;
-            }
-            len = other.len;
-            head = new node(other.head->value);
-            if (other.head->next != nullptr) {
+
+            // First, create a temporary new list that we will copy to
+            SortedList temp;
+
+            // Handle the case where the other list is empty
+            if (other.head != nullptr) {
+                temp.head = new node(other.head->value);
                 node *current = other.head->next;
-                node *tmp = head;
+                node *tmp = temp.head;
+
                 while (current != nullptr) {
                     tmp->next = new node(current->value);
                     tmp = tmp->next;
                     current = current->next;
                 }
                 tmp->next = nullptr;
+                temp.len = other.len;
             }
+
+            // Now, swap the contents of 'this' and 'temp'
+            std::swap(head, temp.head);
+            std::swap(len, temp.len);
+
             return *this;
         }
+
 
         void insert(T value) {
             if (head == nullptr) {
