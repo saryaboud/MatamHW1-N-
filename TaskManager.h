@@ -11,7 +11,7 @@ private:
     /**
      * @brief Maximum number of persons the TaskManager can handle.
      */
-
+    int taskid;
     static const int MAX_PERSONS = 10;
     Person arr[MAX_PERSONS];
 
@@ -27,6 +27,10 @@ public:
     TaskManager();
 
     ~TaskManager();
+
+    int getId() const;
+
+    void setId(int id);
 
     /**
      * @brief Deleted copy constructor to prevent copying of TaskManager objects.

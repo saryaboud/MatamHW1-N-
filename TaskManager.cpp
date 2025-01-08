@@ -2,9 +2,18 @@
 #include "TaskManager.h"
 #include <functional>
 
-TaskManager::TaskManager() = default;
+TaskManager::TaskManager() : taskid(0) {
+}
 
 TaskManager::~TaskManager() = default;
+
+int TaskManager::getId() const {
+    return taskid;
+}
+
+void TaskManager::setId(int id) {
+    taskid = id;
+}
 
 int TaskManager::length_() const {
     int length = 0;
@@ -16,10 +25,7 @@ int TaskManager::length_() const {
 
 void TaskManager::assignTask(const std::string &personName, const Task &task) {
     int length = this->length_();
-    int taskid = 0;
-    for (int i = 0; i < length; i++) {
-        taskid += arr[i].getTasks().length();
-    }
+    if (length >= MAX_PERSONS) throw std::runtime_error("no space");
     for (int i = 0; i < length; i++) {
         if (this->arr[i].getName() == personName) {
             Task newtask(task);
@@ -29,13 +35,11 @@ void TaskManager::assignTask(const std::string &personName, const Task &task) {
             return;
         }
     }
-    if (length >= MAX_PERSONS) throw std::runtime_error("no space");
     arr[length] = Person(personName);
     Task newtask(task);
     newtask.setId(taskid);
     arr[length].assignTask(newtask);
     taskid++;
-    length++;
 }
 
 void TaskManager::completeTask(const string &personName) {
@@ -48,7 +52,7 @@ void TaskManager::completeTask(const string &personName) {
 }
 
 void TaskManager::bumpPriorityByType(TaskType type, int priority) {
-    if(priority <= 0){
+    if (priority <= 0) {
         return;
     }
     int length = this->length_();
@@ -63,7 +67,7 @@ void TaskManager::bumpPriorityByType(TaskType type, int priority) {
                 delete new_task; // caution
             }
             return task;
-         };
+        };
         SortedList<Task> l = list.apply(func);
         arr[i].setTasks(l);
     }
@@ -78,13 +82,13 @@ void TaskManager::printAllEmployees() const {
 
 void TaskManager::printAllTasks() const {
     SortedList<Task> newlist;
-    for (int i = 0; i < this->length_(); i++){
-        for(auto x : arr[i].getTasks()){
+    for (int i = 0; i < this->length_(); i++) {
+        for (auto x: arr[i].getTasks()) {
             newlist.insert(x);
         }
     }
     // print the new node
-    for (auto x : newlist) {
+    for (auto x: newlist) {
         std::cout << x << std::endl;
     }
 }
@@ -92,14 +96,14 @@ void TaskManager::printAllTasks() const {
 void TaskManager::printTasksByType(TaskType type) const {
     SortedList<Task> newlist;
 
-    for(int i = 0 ;i < this->length_();i++){
-        for(auto x : this->arr[i].getTasks()){
-            if(x.getType() == type)
-            newlist.insert(x);
+    for (int i = 0; i < this->length_(); i++) {
+        for (auto x: this->arr[i].getTasks()) {
+            if (x.getType() == type)
+                newlist.insert(x);
         }
     }
     //print the new node
-    for (auto x : newlist) {
+    for (auto x: newlist) {
         std::cout << x << std::endl;
     }
 }
