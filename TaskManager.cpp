@@ -24,28 +24,35 @@ int TaskManager::length_() const {
 }
 
 void TaskManager::assignTask(const std::string &personName, const Task &task) {
-    int length = this->length_();
-    int f = 0;
-    if(length > MAX_PERSONS)throw std::runtime_error("no space");
-    if (length <= MAX_PERSONS) {
-        for (int i = 0; i < length; i++) {
-            if (this->arr[i].getName() == personName) {
-                Task newtask(task);
-                newtask.setId(taskid);
-                arr[i].assignTask(newtask);
-                taskid++;
-                return;
-            }
-            f = i;
+    int length = this->length_(); // Get the current number of occupied slots.
+
+    // Explicit check: Ensure length is within bounds.
+    if (length > MAX_PERSONS) {
+        throw std::logic_error("Length exceeds maximum allowed persons. Internal state corruption?");
+    }
+
+    // Search for the person in the array.
+    for (int i = 0; i < length; i++) {
+        if (this->arr[i].getName() == personName) {
+            // Person found, assign the task.
+            Task newTask(task);
+            newTask.setId(taskid);
+            arr[i].assignTask(newTask);
+            taskid++; // Increment task ID for the next task.
+            return;
         }
     }
-   if (f < MAX_PERSONS - 1){
-        arr[f + 1] = Person(personName);
-        Task newtask(task);
-        newtask.setId(taskid);
-        arr[f + 1].assignTask(newtask);
-        taskid++;
 
+    // If the person is not found and there's space, add a new person.
+    if (length < MAX_PERSONS) {
+        arr[length] = Person(personName); // Add new person at the next free slot.
+        Task newTask(task);
+        newTask.setId(taskid);
+        arr[length].assignTask(newTask); // Assign the task to the new person.
+        taskid++; // Increment task ID for the next task.
+    } else {
+        // If the array is full and the person was not found, throw an exception.
+        throw std::runtime_error("No space to add a new person, and the person was not found.");
     }
 }
 
