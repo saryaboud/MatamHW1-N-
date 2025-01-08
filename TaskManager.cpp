@@ -48,6 +48,9 @@ void TaskManager::completeTask(const string &personName) {
 }
 
 void TaskManager::bumpPriorityByType(TaskType type, int priority) {
+    if(priority <= 0){
+        return;
+    }
     int length = this->length_();
     for (int i = 0; i < length; i++) {
         SortedList<Task> list = arr[i].getTasks();
