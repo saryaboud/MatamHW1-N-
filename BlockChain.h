@@ -1,10 +1,10 @@
-
 #pragma once
 
 #include <string>
-#include <fstream>
+
 
 #include "Transaction.h"
+
 
 using std::string;
 using std::ifstream;
@@ -20,7 +20,11 @@ typedef unsigned int (*updateFunction)(unsigned int);
  *
 */
 struct BlockChain {
-    // You may add any fields you believe are necessary
+    Transaction data;
+    string timestamp;
+    BlockChain *next;
+
+    // static BlockChain *creatblock(BlockChain *&head, const Transaction &data, const std::string &timestamp);
 };
 
 
@@ -31,7 +35,7 @@ struct BlockChain {
  *
  * @return Number of Blocks in the BlockChain
 */
-int BlockChainGetSize(const BlockChain& blockChain);
+int BlockChainGetSize(const BlockChain &blockChain);
 
 
 /**
@@ -42,7 +46,7 @@ int BlockChainGetSize(const BlockChain& blockChain);
  *
  * @return Balance of the person
 */
-int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name);
+int BlockChainPersonalBalance(const BlockChain &blockChain, const string &name);
 
 
 /**
@@ -55,11 +59,11 @@ int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name);
  * @param timestamp String that holds the time the transaction was made
 */
 void BlockChainAppendTransaction(
-        BlockChain& blockChain,
-        unsigned int value,
-        const string& sender,
-        const string& receiver,
-        const string& timestamp
+    BlockChain &blockChain,
+    unsigned int value,
+    const string &sender,
+    const string &receiver,
+    const string &timestamp
 );
 
 
@@ -71,9 +75,9 @@ void BlockChainAppendTransaction(
  * @param timestamp String that holds the time the transaction was made
 */
 void BlockChainAppendTransaction(
-        BlockChain& blockChain,
-        const Transaction& transaction,
-        const string& timestamp
+    BlockChain &blockChain,
+    const Transaction &transaction,
+    const string &timestamp
 );
 
 
@@ -85,7 +89,7 @@ void BlockChainAppendTransaction(
  * @return BlockChain created from the file
  *
 */
-BlockChain BlockChainLoad(ifstream& file);
+BlockChain BlockChainLoad(ifstream &file);
 
 
 /**
@@ -93,7 +97,7 @@ BlockChain BlockChainLoad(ifstream& file);
  *
  * Data will be printed in the following format:
  *
- * BlockChain info:
+ * BlockChain Info:
  * <n>.
  * Sender Name: <name>
  * Receiver Name: <name>
@@ -102,10 +106,9 @@ BlockChain BlockChainLoad(ifstream& file);
  *
  * @param blockChain BlockChain to print
  * @param file File to print to
- *
-*/
-void BlockChainDump(const BlockChain& blockChain, ofstream& file);
+ */
 
+void BlockChainDump(const BlockChain &blockChain, ofstream &file);
 
 
 /**
@@ -121,7 +124,7 @@ void BlockChainDump(const BlockChain& blockChain, ofstream& file);
  * @param file File to print to
  *
 */
-void BlockChainDumpHashed(const BlockChain& blockChain, ofstream& file);
+void BlockChainDumpHashed(const BlockChain &blockChain, ofstream &file);
 
 
 /**
@@ -138,7 +141,7 @@ void BlockChainDumpHashed(const BlockChain& blockChain, ofstream& file);
  *
  * @return true if the file is valid, false otherwise
 */
-bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file);
+bool BlockChainVerifyFile(const BlockChain &blockChain, std::ifstream &file);
 
 
 /**
@@ -147,7 +150,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file);
  *
  * @param blockChain BlockChain to compress
 */
-void BlockChainCompress(BlockChain& blockChain);
+void BlockChainCompress(BlockChain &blockChain);
 
 
 /**
@@ -156,4 +159,12 @@ void BlockChainCompress(BlockChain& blockChain);
  * @param blockChain BlockChain to update
  * @param function a pointer to a transform function
 */
-void BlockChainTransform(BlockChain& blockChain, updateFunction function);
+void BlockChainTransform(BlockChain &blockChain, updateFunction function);
+
+bool CheckIfSenderAndRecieverEqual(const BlockChain &block1, const BlockChain &block2);
+
+void print(BlockChain *tmp, ofstream &file, int counter);
+
+void print_hash(BlockChain *tmp,ofstream &file);
+
+void clearBlockchain(BlockChain& head);
