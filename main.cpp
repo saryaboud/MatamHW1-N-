@@ -31,26 +31,31 @@ int main(int argc, char *argv[]) {
     std::string t = argv[3];
 
     std::ifstream source(s);
-    std::ofstream target(t);
 
 
     if (op == "format") {
+        std::ofstream target(t);
         format(source, target);
-    }
-    if (op == "hash") {
-        h(source, target);
-    }
-    if (op == "compress") {
-        compress(source, target);
-    }
-    if (op == "verify") {
         target.close();
-        std::ifstream target1(argv[3]);
-        verify(source, target1);
+    }else if (op == "hash") {
+        std::ofstream target(t);
+        h(source, target);
+        target.close();
     }
+   else  if (op == "compress") {
+        std::ofstream target(t);
+        compress(source, target);
+        target.close();
+    }
+    else if (op == "verify") {
+        std::ifstream target(t);
+        verify(source, target);
+        target.close();
+    }
+    else{cout << getErrorMessage() << endl;}
 
     source.close();
-    target.close();
+
 }
 
 void format(std::ifstream &source, std::ofstream &target) {
