@@ -162,7 +162,7 @@ namespace mtm {
             return length;
         }
 
-        SortedList filter(std::function<bool(T)> func) {
+        SortedList filter(std::function<bool(T)> func) const{
             SortedList newlist;
             node *tmp = this->head;
             while (tmp != nullptr) {
